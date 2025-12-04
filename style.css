@@ -1,0 +1,203 @@
+:root {
+    --ef-blue: #121f45;
+    --ef-yellow: #f3c300;
+    --ef-pink: #d9006c;
+    --light: #f4f4f4;
+    --success: #28a745;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--ef-blue);
+    color: var(--light);
+    margin: 0;
+    padding: 10px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 3px solid var(--ef-yellow);
+    padding-bottom: 10px;
+}
+
+h1 {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--ef-yellow);
+    font-size: 1.5rem;
+}
+
+p.subtitle { color: #ccc; font-size: 0.9rem; margin-top: 5px; }
+
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+h2 {
+    border-left: 5px solid var(--ef-pink);
+    padding-left: 10px;
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+/* Configuração dos Participantes */
+.players-setup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+input[type="text"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+    width: 22%;
+    min-width: 120px;
+}
+
+/* Tabela */
+.table-responsive { overflow-x: auto; }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    color: #333;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    min-width: 600px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: var(--ef-yellow);
+    color: var(--ef-blue);
+    font-weight: 800;
+}
+
+tr:nth-child(even) { background-color: #f9f9f9; }
+
+tr:first-child td {
+    font-weight: bold;
+    background-color: rgba(243, 195, 0, 0.2);
+    border-left: 5px solid var(--ef-pink);
+}
+
+/* Jogos */
+.round-header {
+    background-color: var(--ef-blue);
+    color: var(--ef-yellow);
+    padding: 8px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid var(--ef-yellow);
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.matches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 10px;
+}
+
+.match {
+    background: rgba(0,0,0,0.25);
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.match-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.team-name {
+    width: 35%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.85em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.score-inputs {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+    width: 30%;
+}
+
+input[type="number"] {
+    width: 35px;
+    padding: 5px;
+    text-align: center;
+    font-size: 1.1em;
+    border: 2px solid var(--ef-yellow);
+    border-radius: 5px;
+    background: #fff;
+    color: #333;
+}
+
+/* Área de Pênaltis */
+.penalty-area {
+    margin-top: 8px;
+    background: rgba(217, 0, 108, 0.25);
+    padding: 5px;
+    border-radius: 4px;
+    display: none;
+    width: 100%;
+    text-align: center;
+}
+
+.penalty-area.active { display: block; }
+
+.penalty-label {
+    font-size: 0.75em;
+    display: block;
+    color: #ffb8da;
+    margin-bottom: 3px;
+}
+
+.penalty-radios {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    font-size: 0.8em;
+}
+
+label { cursor: pointer; display: flex; align-items: center; gap: 4px; }
+
+@media (max-width: 600px) {
+    input[type="text"] { width: 45%; }
+    .matches-grid { grid-template-columns: 1fr; }
+}
